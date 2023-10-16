@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import world.raketa.pages.Locale;
-import world.raketa.pages.RaketaWorldPage;
+import world.raketa.pages.MainPage;
 import world.raketa.utils.DataGenerationUtils;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class RaketaWorldTests extends RaketaRemoteBaseTest {
-    RaketaWorldPage raketaWorldPage = new RaketaWorldPage();
+    MainPage raketaWorldPage = new MainPage();
     DataGenerationUtils dataGenerationUtils = new DataGenerationUtils();
     String
             firstName = dataGenerationUtils.getFirstName(),

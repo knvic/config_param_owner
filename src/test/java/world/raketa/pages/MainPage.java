@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class RaketaWorldPage {
+public class MainPage {
 
 
     SelenideElement
@@ -46,18 +46,18 @@ public class RaketaWorldPage {
     ;
 
 
-    public RaketaWorldPage openPage() {
+    public MainPage openPage() {
         open(baseUrl);
         return this;
     }
 
-    public RaketaWorldPage setLocale(Locale locale) {
+    public MainPage setLocale(Locale locale) {
         selectLocale.hover().find(byText(locale.getLanguage())).click();
         return this;
     }
 
 
-    public RaketaWorldPage shouldHaveTargetMenu(List<String> list) {
+    public MainPage shouldHaveTargetMenu(List<String> list) {
         for (String item : list
         ) {
             m_navigation.should(text(item));
@@ -66,7 +66,7 @@ public class RaketaWorldPage {
     }
 
 
-    public RaketaWorldPage checkElementsPullDownMenu(List<String> list, int count, String first) {
+    public MainPage checkElementsPullDownMenu(List<String> list, int count, String first) {
 
         for (String item : list) {
 
@@ -85,7 +85,7 @@ public class RaketaWorldPage {
     }
 
 
-    public RaketaWorldPage career() {
+    public MainPage career() {
         pullDownElement.first().hover();
         listPullDownMenu.first().hover().shouldHave(text("Карьера")).shouldBe(visible, Duration.ofSeconds(10));
         linkToThePageCareer.click();
@@ -93,19 +93,19 @@ public class RaketaWorldPage {
     }
 
 
-    public RaketaWorldPage waitingForThePageCareerLoad() {
+    public MainPage waitingForThePageCareerLoad() {
         loadingAreaPageCareer.findBy(text("Еще мы совместно участвуем в экологических проектах, занимаемся йогой и совершенствуем английский язык.")).shouldBe(visible, Duration.ofSeconds(10)).scrollTo();
         return this;
     }
 
 
-    public RaketaWorldPage linkVacancyEnabled() {
+    public MainPage linkVacancyEnabled() {
         linkToThePageVacancy.shouldBe(enabled).scrollTo().click();
         return this;
     }
 
 
-    public RaketaWorldPage selectTargetWindows() {
+    public MainPage selectTargetWindows() {
         Set<String> windowHandles = getWebDriver().getWindowHandles();
         int c = 1;
         String win1 = null;
@@ -125,18 +125,18 @@ public class RaketaWorldPage {
     }
 
 
-    public RaketaWorldPage findVacancy(String vacancy) {
+    public MainPage findVacancy(String vacancy) {
         areaOfVacancy.shouldHave(text(vacancy));
         return this;
     }
 
-    public RaketaWorldPage yogaAtLunch() {
+    public MainPage yogaAtLunch() {
         areaQAVacancy.findBy(text(" йога в обед")).scrollTo();
         return this;
     }
 
 
-    public RaketaWorldPage waitingForTheSiteToLoad() {
+    public MainPage waitingForTheSiteToLoad() {
         loadingAreaMainPage.first().shouldHave(text("Экономьте на командировках, улучшайте контроль по поездкам, " +
                 "ускоряйте отчетность. Пришло время рассмотреть цифровую " +
                 "платформу Ракета"), Duration.ofSeconds(10));
@@ -144,28 +144,28 @@ public class RaketaWorldPage {
         return this;
     }
 
-    public RaketaWorldPage goToTheMenuItemCompany() {
+    public MainPage goToTheMenuItemCompany() {
         topMenu.find(byText("Компания")).click();
         return this;
     }
 
-    public RaketaWorldPage waitingForTheSiteCompanyToLoad() {
+    public MainPage waitingForTheSiteCompanyToLoad() {
         fieldText.first().shouldHave(text("Компания Ракета – российский разработчик"));
         return this;
     }
 
-    public RaketaWorldPage callingInpitTab() {
+    public MainPage callingInpitTab() {
         button.scrollTo().click();
         return this;
     }
 
 
-    public RaketaWorldPage checkVisibleInpitTab() {
+    public MainPage checkVisibleInpitTab() {
         tabInput.shouldBe(visible, Duration.ofSeconds(10));
         return this;
     }
 
-    public RaketaWorldPage fillingTheForm(String name, String email, String phone, String input) {
+    public MainPage fillingTheForm(String name, String email, String phone, String input) {
         fieldName.setValue(name);
         fieldEmail.setValue(email);
         fildPhone.setValue(phone);

@@ -1,4 +1,4 @@
 package world.raketa.pages;
 
-public class CareerPages {
+public class CareerPage {
 }
