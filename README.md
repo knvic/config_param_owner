@@ -48,51 +48,52 @@
 
 ### Запуск тестов из терминала
 ```
+gradle clean run_raketa 
+```
+В проекте применяется библиотека owner с опцией считывания параметров из файлов конфигурации, помещенных в папку resources. Имеются три предустановленные конфигурации 
+
+* <code>local</code> – запуск тестов на локальной машине с браузером.
+* <code>remote</code> – запуск тестов с использованиес удаленного Selenoid.
+* <code>localSelenoid</code> –  запуск тестов с использованием локального Selenoid запущенного в Docker.
+
+По умолчанию выбирается профиль local. Для выбора другого профиля следует указать его в строке запуска, например:
+
+
+```
 gradle clean run_raketa  -Denv=remote
-
-```
-При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
-
-
-При необходимости также можно переопределить параметры запуска
-
-```
-clean
-${TASK} -DremoteUrl=${SELENOID_URL}
-
 ```
 
-### Параметры сборки
+При выполнении команды, данные тесты запустятся удаленно в предопределенном <code>Selenoid</code>.
 
-* <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+
 
 ## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
 
 Для запуска сборки необходимо перейти в раздел Собрать с параметрами и нажать кнопку Собрать.
 
-<p align="center">
-<img title="Jenkins Build" src="media/screens/jenkins1.PNG">
-</p>
+* <code>${TASK}</code> – выбор задачи.
+* <code>${REMOTE}</code> – установлен выбор запуска на удаленном Selenoid.
 
-<kbd>[![](media/screens/jenkins1.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_config/)</kbd>
+Запускается профиль remote. Остальные параметры считываются из файла конфигурации
+
+<kbd>[![](media/screens/jenkins1.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/)</kbd>
 
 ## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
 ### Overview
 
-<p align="center">
-<img title="Allure Overview" src="media/screens/Allure1.PNG">
-</p>
+
+
+<kbd>[![](media/screens/Allure1.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/)</kbd>
 
 ### Результат выполнения теста
 
-<p align="center">
-<img title="Test Results in Alure" src="media/screens/Allure2.PNG">
-</p>
+<kbd>[![](media/screens/Allure2.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#suites/99d55f6db0c04008985fd906f3e2dc5e/ce8113689735c9e3/
+)</kbd>
 
-<p align="center">
-<img title="Test Results in Alure" src="media/screens/Allure3.PNG">
-</p>
 
+
+<kbd>[![](media/screens/Allure3.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#behaviors/aa35b6349be711bd68148bf5dae0d52a/c3f695d8d094a2ff/
+)</kbd>
 
 ## <img src="media/logo/AllureTestOps.svg" title="Allure TestOps" width="4%"/> Интеграция с Allure TestOps
 
@@ -101,21 +102,18 @@ ${TASK} -DremoteUrl=${SELENOID_URL}
 На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 
-<p align="center">
-<img title="Allure TestOps DashBoard" src="media/screens/AllureTestOpsDash.PNG">
-</p>
+<kbd>[![](media/screens/AllureTestOpsDash.PNG)](https://allure.autotests.cloud/project/3728/dashboard)</kbd>
 
-<p align="center">
-<img title="Allure TestOps DashBoard" src="media/screens/AllureTestOps.PNG">
-</p>
+
+<kbd>[![](media/screens/AllureTestOps.PNG)](https://allure.autotests.cloud/project/3728/test-cases/26697?treeId=0)</kbd>
 
 ## <img src="media/logo/Jira.svg" title="Jira" width="4%"/> Интеграция с Jira
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
-<p align="center">
-<img title="Jira Task" src="media/screens/Jira.PNG">
-</p>
+
+
+<kbd>[![](media/screens/Jira.PNG)](https://jira.autotests.cloud/browse/HOMEWORK-918)</kbd>
 
 
 ## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
