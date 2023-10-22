@@ -17,8 +17,6 @@ import static io.qameta.allure.Allure.step;
 public class VacancyQAPageTests extends BaseTest {
        VacancyQAPage vacancyQAPage = new VacancyQAPage();
 
-
-
     @Story("Проверка наличия главного условия в работе QA automation engineer")
     @Link(value = "Testing", url = "https://job.raketa.world/qaautomation")
     @DisplayName("Тестирование наличия опции Йога в обед в условиях работы")

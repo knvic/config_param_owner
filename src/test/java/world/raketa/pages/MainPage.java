@@ -68,20 +68,6 @@ public class MainPage {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public MainPage waitingForTheSiteToLoad() {
         loadingAreaMainPage.first().shouldHave(text("Экономьте на командировках, улучшайте контроль по поездкам, " +
                 "ускоряйте отчетность. Пришло время рассмотреть цифровую " +
