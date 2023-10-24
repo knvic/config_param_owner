@@ -1,23 +1,19 @@
 package world.raketa.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import world.raketa.config.ConfigReader;
 import world.raketa.config.WebConfig;
 import world.raketa.config.WebConfigForProject;
 import world.raketa.helpers.Attach;
 
-import java.util.Map;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static world.raketa.config.ConfigReader.webConfig;
 
-public class RaketaRemoteBaseTest {
+public class BaseTest {
     private static final WebConfig config = ConfigReader.Instance.read();
 
     @BeforeAll

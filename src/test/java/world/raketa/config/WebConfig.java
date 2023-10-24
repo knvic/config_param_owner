@@ -1,8 +1,5 @@
 package world.raketa.config;
 
-
-
-
 import org.aeonbits.owner.Config;
 
 import java.net.URL;
@@ -40,7 +37,7 @@ public interface WebConfig extends Config {
 
     @Key("isLocalSelenoid")
     @DefaultValue("false")
-    Boolean  isLocalSelenoid();
+    Boolean isLocalSelenoid();
 
     @Key("remoteUrl")
     @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
