@@ -1,6 +1,8 @@
 
 <h1> Проект по автоматизации тестовых сценариев для сайта цифровой платформы для организации командировок и управления расходами  </h1>
 
+* ### https://raketa.world/ – тестируемый ресурс.
+
 ## :pushpin: Содержание:
 
 - [Использованный стек технологий](#computer-использованный-стек-технологий)
@@ -67,30 +69,31 @@ gradle clean run_raketa  -Denv=remote
 
 
 
-## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> <a href="https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/" target="_blank" rel="noopener"><span>Сборка в Jenkins</span> </a>
 
 Для запуска сборки необходимо перейти в раздел Собрать с параметрами и нажать кнопку Собрать.
 
-* <code>${TASK}</code> – выбор задачи.
-* <code>${REMOTE}</code> – установлен выбор запуска на удаленном Selenoid.
+####   Доступные для изменения параметры :
+* <code>TASK</code> – выбор задачи.
+
 
 Запускается профиль remote. Остальные параметры считываются из файла конфигурации
 
 <kbd>[![](media/screens/jenkins1.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/)</kbd>
 
 ## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
-### Overview
+##### <a href="https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#" target="_blank" rel="noopener"><span>Overview</span> </a>
 
 
 
 <kbd>[![](media/screens/Allure1.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/)</kbd>
 
-### Результат выполнения теста
+#####  <a href="https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#suites/99d55f6db0c04008985fd906f3e2dc5e/ce8113689735c9e3/" target="_blank" rel="noopener"><span>Результат выполнения теста</span> </a>
 
 <kbd>[![](media/screens/Allure2.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#suites/99d55f6db0c04008985fd906f3e2dc5e/ce8113689735c9e3/
 )</kbd>
 
-
+#### <a href="https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#behaviors/aa35b6349be711bd68148bf5dae0d52a/c3f695d8d094a2ff/" target="_blank" rel="noopener"><span>Behaviors</span> </a>
 
 <kbd>[![](media/screens/Allure3.PNG)](https://jenkins.autotests.cloud/job/021-knvik-jenkins_raketa_all_alltops_jira_tg_owner_conf/8/allure/#behaviors/aa35b6349be711bd68148bf5dae0d52a/c3f695d8d094a2ff/
 )</kbd>
@@ -101,9 +104,11 @@ gradle clean run_raketa  -Denv=remote
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>
 На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
+##### <a href="https://allure.autotests.cloud/project/3728/dashboard" target="_blank" rel="noopener"><span>Dashboards</span> </a>
 
 <kbd>[![](media/screens/AllureTestOpsDash.PNG)](https://allure.autotests.cloud/project/3728/dashboard)</kbd>
 
+##### <a href="https://allure.autotests.cloud/project/3728/test-cases/26697?treeId=0" target="_blank" rel="noopener"><span>Test cases</span> </a>
 
 <kbd>[![](media/screens/AllureTestOps.PNG)](https://allure.autotests.cloud/project/3728/test-cases/26697?treeId=0)</kbd>
 
@@ -111,7 +116,7 @@ gradle clean run_raketa  -Denv=remote
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
-
+##### <a href="https://jira.autotests.cloud/browse/HOMEWORK-918" target="_blank" rel="noopener"><span>Jira</span> </a>
 
 <kbd>[![](media/screens/Jira.PNG)](https://jira.autotests.cloud/browse/HOMEWORK-918)</kbd>
 

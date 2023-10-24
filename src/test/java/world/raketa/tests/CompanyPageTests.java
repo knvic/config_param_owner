@@ -19,7 +19,7 @@ public class CompanyPageTests extends BaseTest {
 
 
     @Story("Заполнение формы обратной связи")
-    @DisplayName("Проверка выбора меню КОПМАНИЯ, вызова окна для ввода данных для связи, возможности ввода данных.")
+    @DisplayName("Проверка выбора меню КОМПАНИЯ, вызова окна для ввода данных для связи, возможности ввода данных.")
     @Tags({
             @Tag("raketa")
     })
@@ -45,12 +45,12 @@ public class CompanyPageTests extends BaseTest {
 
         step("Нажимаем на кнопку вызова окна ввода данных для связи ", () -> {
             companyPage
-                    .callingInpitTab();
+                    .callingInputTab();
         });
 
         step("Проверяем загрузку и видимость окна", () -> {
             companyPage
-                    .checkVisibleInpitTab();
+                    .checkVisibleInputTab();
         });
 
         step("Заполняем поля формы. Поле email вводим не правильно, чтобы форма не отправлялась и жмем отправить", () -> {
@@ -60,7 +60,7 @@ public class CompanyPageTests extends BaseTest {
 
         step("Так как заполнено не корректно, проверяем, что форма видна ", () -> {
             companyPage
-                    .checkVisibleInpitTab();
+                    .checkVisibleInputTab();
         });
 
     }

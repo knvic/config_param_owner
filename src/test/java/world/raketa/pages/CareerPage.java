@@ -36,7 +36,6 @@ public class CareerPage {
         String win1 = null;
         String win2 = null;
         for (String windowHandle : windowHandles) {
-            //System.out.println("Window handle: " + windowHandle);
             if (c == 1) {
                 win1 = windowHandle;
             } else {

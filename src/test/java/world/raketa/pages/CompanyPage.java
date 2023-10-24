@@ -16,8 +16,8 @@ SelenideElement
         tabInput = $(".t702__wrapper"),
         fieldName = tabInput.$("[name=Name]"),
         fieldEmail = tabInput.$("[name=Email]"),
-        fildPhone = tabInput.$("[name=Phone]"),
-        fildInput = tabInput.$("[name=Input]"),
+        fieldPhone = tabInput.$("[name=Phone]"),
+        fieldInput = tabInput.$("[name=Input]"),
         fieldCheckBox = tabInput.$(".t-checkbox__indicator"),
         buttonSubmit = tabInput.$("[type=submit]");
 
@@ -28,12 +28,12 @@ SelenideElement
         fieldText.first().shouldHave(text("Компания Ракета – российский разработчик"));
         return this;
     }
-    public CompanyPage callingInpitTab() {
+    public CompanyPage callingInputTab() {
         button.scrollTo().click();
         return this;
     }
 
-    public CompanyPage checkVisibleInpitTab() {
+    public CompanyPage checkVisibleInputTab() {
         tabInput.shouldBe(visible, Duration.ofSeconds(10));
         return this;
     }
@@ -43,8 +43,8 @@ SelenideElement
 
         fieldName.setValue(dataGenerationUtils.getFirstName());
         fieldEmail.setValue("Не правильный email");
-        fildPhone.setValue(dataGenerationUtils.getUserNumber());
-        fildInput.setValue("Компания");
+        fieldPhone.setValue(dataGenerationUtils.getUserNumber());
+        fieldInput.setValue("Компания");
         fieldCheckBox.scrollTo().click();
         buttonSubmit.click();
         return this;

@@ -6,6 +6,7 @@ public enum Browser {
 
     CHROME,
 
-    EDGE
+    EDGE,
+    IE
 
 }

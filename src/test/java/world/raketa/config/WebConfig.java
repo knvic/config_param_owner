@@ -16,12 +16,8 @@ public interface WebConfig extends Config {
     String getBaseUrl();
 
     @Key("browser")
-    @DefaultValue("YA")
+    @DefaultValue("CHROME")
     Browser getBrowser();
-
-    @Key("remoteUrl")
-    @DefaultValue("http://localhost:4444")
-    URL getRemoteURL();
 
     @Key("browserVersion")
     @DefaultValue("100.0")
